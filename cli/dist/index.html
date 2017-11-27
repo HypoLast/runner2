@@ -1,0 +1,43 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Runner 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            width: 100vw;
+            max-width: 177.78vh;
+            height: 100vh;
+            max-height: 56.25vw;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        body {
+            overflow: hidden;
+            background-color: #323438;
+        }
+    </style>
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="foreign/itertools.js"></script>
+    <!-- <script src="foreign/three.js-master/build/three.js"></script> -->
+    <script src="three.js"></script>
+    <script>
+        function v2(x, y) {
+            return new THREE.Vector2(x, y);
+        }
+        function v3(x, y, z) {
+            if (z !== undefined) {
+                return new THREE.Vector3(x, y, z);
+            } else {
+                return new THREE.Vector3(x.x, x.y, y);
+            }
+        }
+    </script>
+    <script src="foreign/require.js" data-main="bin/main.js"></script>
+</body>

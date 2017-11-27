@@ -1,0 +1,28 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outDir": "dist/bin",
+        "target": "es6",
+        "module": "amd",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "lib": [
+            "es2015.core",
+            "dom",
+            "es6"
+        ],
+        "watch": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "files": [
+        "dist/foreign/itertools.d.ts",
+        "src/types.d.ts"
+    ],
+    "exclude": [
+        "node_modules/**/*"
+    ]
+}
