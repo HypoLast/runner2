@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "amd",
+        "outDir": "dist/bin",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "watch": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ]
+}
