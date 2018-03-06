@@ -13,9 +13,13 @@ export class TemplateRoom {
     public height: number;
     public tiles = new Map2D<number>();
 
-    public doorways = [-1, -1, -1, -1];
+    public doorways: number[] = [];
 
     constructor(data: number[][]) {
+        this.doorways[Direction.TOP]        = -1;
+        this.doorways[Direction.BOTTOM]     = -1;
+        this.doorways[Direction.LEFT]       = -1;
+        this.doorways[Direction.RIGHT]      = -1;
         this.width = data[0].length;
         this.height = data.length;
         for (let i = 0; i < this.width; i ++) {
@@ -26,21 +30,21 @@ export class TemplateRoom {
 
         for (let i = 0; i < this.width; i ++) {
             if (this.tiles.get(i, 0) === 0) {
-                this.doorways[Direction.TOP - Direction.TOP] = i;
+                this.doorways[Direction.TOP] = i;
                 this.tiles.set(i, 0, Direction.TOP);
             }
             if (this.tiles.get(i, this.height - 1) === 0) {
-                this.doorways[Direction.BOTTOM - Direction.TOP] = i;
+                this.doorways[Direction.BOTTOM] = i;
                 this.tiles.set(i, this.height - 1, Direction.BOTTOM);
             }
         }
         for (let i = 0; i < this.height; i ++) {
             if (this.tiles.get(0, i) === 0) {
-                this.doorways[Direction.LEFT - Direction.TOP] = i;
+                this.doorways[Direction.LEFT] = i;
                 this.tiles.set(0, i, Direction.LEFT);
             }
             if (this.tiles.get(this.width - 1, i) === 0) {
-                this.doorways[Direction.RIGHT - Direction.TOP] = i;
+                this.doorways[Direction.RIGHT] = i;
                 this.tiles.set(this.width - 1, i, Direction.RIGHT);
             }
         }
