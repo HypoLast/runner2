@@ -7,7 +7,10 @@
         "strictNullChecks": true,
         "inlineSourceMap": true,
         "inlineSources": true,
-        "watch": true
+        "watch": true,
+        "lib": ["es2015", "es2015.iterable", "dom"],
+        "downlevelIteration": true,
+        "experimentalDecorators": true
     },
     "include": [
         "src/**/*.ts"
